@@ -13,6 +13,9 @@ RUN wget http://nlp.stanford.edu/software/$CORENLP_ARCHIVE \
   && mv $(basename ../$CORENLP_ARCHIVE .zip) $CORENLP_PATH \
   && rm $CORENLP_ARCHIVE \
   && rm corenlp.sha1
+ 
+RUN wget http://nlp.stanford.edu/software/stanford-english-corenlp-models-current.jar \
+  && mv stanford-english-corenlp-models-current.jar $CORENLP_PATH
 
 WORKDIR $CORENLP_PATH
 
